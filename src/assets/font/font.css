@@ -1,0 +1,25 @@
+/* fonts.css */
+@font-face {
+     font-family: 'Poppins';
+     src: url('fonts/Poppins-Regular.woff2') format('woff2'),
+          url('fonts/Poppins-Regular.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+   }
+   
+   @font-face {
+     font-family: 'Lufga';
+     src: url('fonts/Lufga-Regular.woff2') format('woff2'),
+          url('fonts/Lufga-Regular.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+   }
+   
+   @font-face {
+     font-family: 'DM Sans';
+     src: url('fonts/DMSans-Regular.woff2') format('woff2'),
+          url('fonts/DMSans-Regular.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+   }
+   
