@@ -1,4 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+a {
+    text-decoration: none !important;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.bootstrap-select .dropdown-toggle:focus, .bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+     outline: none !important; 
+     outline:none !important; 
+     outline-offset: 0px !important 
+}
+.nav-link a.active {
+    color: #fff ;
+}
+
+.nav-link > ul > li >a {
+    color: #fff;
+}

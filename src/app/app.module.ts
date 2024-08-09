@@ -2,34 +2,34 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeaderComponent } from './header/header.component';
-import { ModalComponent } from './modal/modal.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { mainInterceptor } from './configuration/main.interceptor';
+import { HttpClientModule , provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MaterialModule } from './configuration/material.module';
+import { FooterComponent } from './shared/reusableComponents/footer/footer.component';
+import { HeaderComponent } from './shared/reusableComponents/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { BookComponent } from './pages/book/book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    FooterComponent,
     HeaderComponent,
-    ModalComponent
+    HomeComponent,
+    ContactUsComponent,
+    BookComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: mainInterceptor,
-    multi: true
-  }, provideAnimationsAsync()],
+  providers: [ provideHttpClient(
+    withInterceptors([authInterceptor])
+  ), 
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
